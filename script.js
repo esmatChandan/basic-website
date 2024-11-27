@@ -37,11 +37,11 @@ function cursorEff(){
 let cursor = document.getElementById("cursor")
 
 pageContant.addEventListener("mousemove", function(chandan){
-    // cursor.style.left = chandan.x+"px"
-    // cursor.style.top = chandan.y+"px"
+    cursor.style.left = chandan.x+"px"
+    cursor.style.borderTop = chandan.y+"px"
     gsap.to(cursor,{
-        x: chandan.x,
-        y:chandan.y
+        x: chandan.x+"px",
+        y:chandan.y+"px"
     }) 
 })
 pageContant.addEventListener("mouseenter", function(){
@@ -58,27 +58,56 @@ pageContant.addEventListener("mouseleave", function(){
         
     })
 })
+}
+
+function cursorEff1(){
+    let page4 = document.querySelector(".page4")
+let cursor1 = document.getElementById("cursor1")
+
+page4.addEventListener("mousemove", function(chandan){
+    cursor1.style.left = chandan.x+"px"
+    cursor1.style.borderTop = chandan.y+"px"
+    gsap.to(cursor1,{
+        x: chandan.x+"px",
+        y:chandan.y+"px"
+    }) 
+})
+page4.addEventListener("mouseenter", function(){
+    gsap.to(cursor1, {
+        scale:1,
+        opacity:1
+        
+    })
+})
+page4.addEventListener("mouseleave", function(){
+    gsap.to(cursor1,{
+        scale:0,
+        opacity:0
+        
+    })
+})
 
 
 }
+cursorEff1();
 cursorEff();
 
-// function page2Animation(){
-//     gsap.from(".page2", {
-//         y:120,
-//         stagger:0.25,
-//         duration:1,
-//         scrollTrigger: {
-//           trigger: ".word",
-//           scroller: ".main",
-//           scrub: true,
-//           start: "top 40%",
-//           end: "top 37%",
-//           scrub:2
-//         },
-//     })
-// }
-// page2Animation()
+function page2Animation(){
+    gsap.from(".page2", {
+        y:120,
+        stagger:0.25,
+        duration:1,
+        scrollTrigger: {
+          trigger: ".word",
+          scroller: ".main",
+          scrub: true,
+          start: "top 40%",
+          end: "top 37%",
+          scrub:2
+        },
+    })
+}
+page2Animation()
 
 var t1 = gsap.timeline()
 // console.log(t1)
