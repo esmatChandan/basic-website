@@ -1,4 +1,3 @@
-
 // gsap.registerPlugin(ScrollTrigger);
 
 // // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -22,113 +21,116 @@
 //   pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
 // });
 
-
-
-
-
-// // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+// // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
 // ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 // ScrollTrigger.refresh();
 
-function cursorEff(){
-    let pageContant = document.getElementById("page-Contant")
-let cursor = document.getElementById("cursor")
+function cursorEff() {
+  let pageContant = document.getElementById("page-Contant");
+  let cursor = document.getElementById("cursor");
 
-pageContant.addEventListener("mousemove", function(chandan){
-    cursor.style.left = chandan.x+"px"
-    cursor.style.borderTop = chandan.y+"px"
-    gsap.to(cursor,{
-        x: chandan.x+"px",
-        y:chandan.y+"px"
-    }) 
-})
-pageContant.addEventListener("mouseenter", function(){
+  pageContant.addEventListener("mousemove", function (event) {
     gsap.to(cursor, {
-        scale:1,
-        opacity:1
-        
-    })
-})
-pageContant.addEventListener("mouseleave", function(){
-    gsap.to(cursor,{
-        scale:0,
-        opacity:0
-        
-    })
-})
+      x: event.clientX,
+      y: event.clientY,
+    });
+  });
+  pageContant.addEventListener("mouseenter", function () {
+    gsap.to(cursor, {
+      scale: 1,
+      opacity: 1,
+    });
+  });
+  pageContant.addEventListener("mouseleave", function () {
+    gsap.to(cursor, {
+      scale: 0,
+      opacity: 0,
+    });
+  });
 }
 
-function cursorEff1(){
-    let page4 = document.querySelector(".page4")
-let cursor1 = document.getElementById("cursor1")
+function cursorEff1() {
+  let page4 = document.querySelector(".page4");
+  let cursor1 = document.getElementById("cursor1");
 
-page4.addEventListener("mousemove", function(chandan){
-    cursor1.style.left = chandan.x+"px"
-    cursor1.style.borderTop = chandan.y+"px"
-    gsap.to(cursor1,{
-        x: chandan.x+"px",
-        y:chandan.y+"px"
-    }) 
-})
-page4.addEventListener("mouseenter", function(){
+  page4.addEventListener("mousemove", function (chandan) {
+    cursor1.style.left = chandan.x + "px";
+    cursor1.style.borderTop = chandan.y + "px";
     gsap.to(cursor1, {
-        scale:1,
-        opacity:1
-        
-    })
-})
-page4.addEventListener("mouseleave", function(){
-    gsap.to(cursor1,{
-        scale:0,
-        opacity:0
-        
-    })
-})
-
-
+      x: chandan.x + "px",
+      y: chandan.y + "px",
+    });
+  });
+  page4.addEventListener("mouseenter", function () {
+    gsap.to(cursor1, {
+      scale: 1,
+      opacity: 1,
+    });
+  });
+  page4.addEventListener("mouseleave", function () {
+    gsap.to(cursor1, {
+      scale: 0,
+      opacity: 0,
+    });
+  });
 }
 cursorEff1();
 cursorEff();
 
-function page2Animation(){
-    gsap.from(".page2", {
-        y:120,
-        stagger:0.25,
-        duration:1,
-        scrollTrigger: {
-          trigger: ".word",
-          scroller: ".main",
-          scrub: true,
-          start: "top 40%",
-          end: "top 37%",
-          scrub:2
-        },
-    })
-}
-page2Animation()
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
 
-var t1 = gsap.timeline()
-// console.log(t1)
-t1.from(".loader h3",{
-    x:40,
-    opacity:0,
-    duration:1,
-    stagger:0.1
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
+
+function page2Animation() {
+  gsap.from(".page2", {
+    y: 120,
+    stagger: 0.25,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".word",
+      scroller: ".main",
+      scrub: true,
+      start: "top 40%",
+      end: "top 37%",
+      scrub: 2,
+    },
+  });
+}
+page2Animation();
+
+var t1 =
+  gsap.timeline() 
+  t1.from("#loader h3", {
+        x:40,
+        opacity:0,
+        duration:1,
+        stagger:0.1
+  });
+t1.to("#loader h3", {
+  opacity: 0,
+  x:-40,
+  duration:1,
+  stagger:0.1,
+  
+});
+t1.to("#loader",{
+    opacity:0
 })
-t1.from(".loader h3", {
-    opacity:0,
-    x: -40,
-    stagger:-0.1,
-    duration:1,
-    
+t1.to("#loader",{
+    display: "none"
 })
-t1.from(".loader",{
+t1.from('#page-Contant h1 span',{
+    y:100,
     opacity:0,
-    
-})
-t1.from(".loader",{
-    display:none
+    stagger:0.1,
     
 })
