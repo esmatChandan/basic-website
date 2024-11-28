@@ -55,12 +55,10 @@ function cursorEff1() {
   let page4 = document.querySelector(".page4");
   let cursor1 = document.getElementById("cursor1");
 
-  page4.addEventListener("mousemove", function (chandan) {
-    cursor1.style.left = chandan.x + "px";
-    cursor1.style.borderTop = chandan.y + "px";
+  page4.addEventListener("mousemove", function (event) {
     gsap.to(cursor1, {
-      x: chandan.x + "px",
-      y: chandan.y + "px",
+      x: event.clientX,
+      y: event.clientY,
     });
   });
   page4.addEventListener("mouseenter", function () {

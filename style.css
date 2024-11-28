@@ -40,7 +40,7 @@ html, body {
 h5{
   font-family: nb;
   color: white;
-font-size: 25px;
+font-size: 18px;
 }
 .page1 video{
     position: absolute;
@@ -261,7 +261,7 @@ hr.solid {
     font-weight: 100;
     border-bottom: 1px solid black;
     
-    width: 96%;
+    width: 90%;
     margin-left: 2%;
   }
   #swiperdiv{
@@ -276,7 +276,7 @@ hr.solid {
   }
 
   .swiper-slide {
-    width: 400px;
+    width: 40px;
     text-align: center;
     font-size: 18px;
     /* background: #fff; */
@@ -297,19 +297,16 @@ hr.solid {
     margin-left: auto;
     margin-right: auto;
   }
-  #page6{
-   
-    width: 100vh;
-  }
+  
   .footer-distributed{
     background: #cdc3c3;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
-    width: 100vw;
+    /* width: 100vw; */
     
     text-align: left;
     font: bold 16px sans-serif;
-    padding: 55px 50px;
+    padding: 50px 50px;
   }
   
   .footer-distributed .footer-left,
@@ -464,7 +461,7 @@ hr.solid {
   
   /* If you don't want the footer to be responsive, remove these media queries */
   
-  @media (max-width: 880px) {
+  @media (max-width: 800px) {
   
     .footer-distributed{
       font: bold 14px sans-serif;
